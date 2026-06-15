@@ -17,12 +17,9 @@ workflows:
       - name: Install dependencies
         script: |
           npm install
-      - name: Install Expo CLI globally
-        script: |
-          npm install -g expo-cli
       - name: Prebuild Expo Project
         script: |
-          npx expo prebuild --platform android
+          npx expo prebuild --platform android --no-interactive
       - name: Build Android App (APK)
         script: |
           cd android && ./gradlew assembleRelease
